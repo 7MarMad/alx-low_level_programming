@@ -17,3 +17,4 @@ int main(void){
 	printf("Size of a long int: %d byte(s)\n",li);
 	printf("Size of a long long int: %d byte(s)\n",lli);
 	return (0);
+}
