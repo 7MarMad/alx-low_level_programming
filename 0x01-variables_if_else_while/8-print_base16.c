@@ -2,17 +2,22 @@
 
 /**
  * main - Entry point
- * printing numbers from 0 to 9
+ *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
 	int i;
+	char c = 'a';
 
-	for (i = 0; i < 10; i++)
+	for(i = 0; i < 10; i++)
 	{
-		printf("%d", i);
+		putchar('0'+i);
 	}
-	printf("\n");
+	while (c <= 'f')
+	{
+		putchar(c);
+	}
+	putchar('\n');
 	return (0);
 }
