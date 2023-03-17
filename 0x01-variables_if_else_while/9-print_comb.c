@@ -9,10 +9,12 @@ int main(void)
 {
 	int i;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 9; i++)
 	{
-		putchar('0' + i);
+		putchar(i + '0');
+		putchar(',');
+		putchar('Space');
 	}
-	putchar('\n');
+	putchar(i + '0');
 	return (0);
 }
