@@ -26,7 +26,7 @@ int main(void)
 					i = i + 3;
 				else if (i / 10 == 2)
 					i = i + 4;
-				else if (i / 10 == 3) 
+				else if (i / 10 == 3)
 					i = i + 5;
 				else if (i / 10 == 4)
 					i = i + 6;
