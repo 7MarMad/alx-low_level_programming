@@ -9,13 +9,13 @@ int main(void)
 {
 	int i, j, k;
 
-	for (k = 0; k < 10; k++)
+	for (k = 0; k < 100; k++)
 	{
 		for (j = 0; j < 10; j++)
 		{
 			for (i = 0; i < 10; i++)
 			{
-				if ((j == (k / 10) && (k % 10) < i) || (j > (k / 10))
+				if ((j == (k / 10) && (k % 10) < i) || (j > (k / 10)))
 				{
 					putchar(k / 10 + '0');
 					putchar(k % 10 + '0');
