@@ -4,19 +4,12 @@
 void print_alphabet(void);
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
-/*
- *  int main(void)
- *{
- *	print_alphabet();
- *	return (0);
- *}
+ * print_alphabet - print all the alphabet from a to z
+ * 
+ * Return: no return , printing in screen 
  */
 
-void print_alphabet()
+void print_alphabet(void)
 {
 	char c = 'a';
 
