@@ -5,8 +5,8 @@ void print_alphabet(void);
 
 /**
  * print_alphabet - print all the alphabet from a to z
- * 
- * Return: no return , printing in screen 
+ *
+ * Return: no return , printing in screen
  */
 
 void print_alphabet(void)
