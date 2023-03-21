@@ -1,7 +1,6 @@
 #include<stdio.h>
+#include "main.h"
 
-
-int _putchar(char c);
 /**
  * main - Entry point
  *
@@ -10,8 +9,8 @@ int _putchar(char c);
 int main(void)
 {
 	int i;
-
 	char array[] = "_putchar\n";
+
 	for (i = 0; array[i] != '\0'; i++)
 	{
 		_putchar(array[i]);
