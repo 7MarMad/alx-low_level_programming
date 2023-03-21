@@ -5,7 +5,9 @@
 /**
  * _islower - searshing for lowercase character
  *
- * Retrun: on success 1. on failure 0
+ * @c: argument for the function
+ *
+ * Return: on success 1. on failure 0
  */
 int _islower(int c)
 {
@@ -15,5 +17,5 @@ int _islower(int c)
 		i = 0;
 	else
 		i = 1;
-	return i;
+	return (i);
 }
