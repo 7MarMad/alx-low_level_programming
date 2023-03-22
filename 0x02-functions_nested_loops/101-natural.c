@@ -17,5 +17,6 @@ int main(void)
 		s = c + d;
 		i++;
 		printf("%d %d %d\n", c, d, s);
-	}while (S < 1024);
+	}while (s < 1024);
+	return (0);
 }
