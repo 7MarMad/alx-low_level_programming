@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	int a = 3, b = 5, c, i = 2, j = 2, s;
+	int a = 3, b = 5, c, d, i = 2, s;
 
 	do
 	{
