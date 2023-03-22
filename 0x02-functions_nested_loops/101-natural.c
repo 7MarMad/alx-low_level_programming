@@ -8,15 +8,17 @@
  */
 int main(void)
 {
-	int a = 3, b = 5, c, d, i = 2, s;
+	int a = 3, b = 5, c, d, i, j, s;
 
-	do
+	for (i = 1; a * i < 1024; i++)
 	{
-		c = a * i;
-		d = b * i;
+		c = c + a * i;
+	}
+	for (j = 1; b * j < 1024; j++)
+	{
+		d = d + b * j;
+	}
 		s = c + d;
-		i++;
-		printf("%d %d %d\n", c, d, s);
-	}while (s < 1024);
+	printf("%d\n", s);
 	return (0);
 }
