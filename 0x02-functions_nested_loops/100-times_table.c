@@ -3,8 +3,10 @@
 
 /**
  * times_table - another
+ *
+ * @n: arg
  */
-void times_table(int n)
+void print_times_table(int n)
 {
 	int i, j, h;
 
