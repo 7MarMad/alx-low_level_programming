@@ -19,9 +19,10 @@ int main(void)
 
 	for (i = 3; i <= sqrt(a); i = i + 2)
 	{
-		while (a % i == 0){
+		while (a % i == 0)
+		{
 			max = i;
-			a = a / 2;
+			a = a / i;
 		}
 	}
 	if (a > 2)
