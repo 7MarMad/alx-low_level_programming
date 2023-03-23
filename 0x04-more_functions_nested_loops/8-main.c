@@ -7,9 +7,10 @@
  */
 int main(void)
 {
-    print_diagonal(0);
-    print_diagonal(2);
-    print_diagonal(10);
-    print_diagonal(-4);
-    return (0);
+	print_triangle(3);
+	print_triangle(10);
+	print_triangle(-11);
+	print_triangle(7);
+	print_triangle(0);
+	return (0);
 }
