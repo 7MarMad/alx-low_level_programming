@@ -15,7 +15,7 @@ void puts_half(char *str)
 	if (k % 2 == 0)
 		n = k / 2;
 	else
-		n = (k - 1) / 2;
+		n = ((k - 1) / 2) + 1;
 	for (i = n; i < k; i++)
 	{
 		_putchar(str[i]);
