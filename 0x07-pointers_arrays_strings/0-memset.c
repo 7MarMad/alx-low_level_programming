@@ -7,7 +7,7 @@
  * @b: arg
  * @n: arg
  *
- * Return: 
+ * Return: returning the s header of the array
  */
 
 char *_memset(char *s, char b, unsigned int n)
@@ -18,4 +18,5 @@ char *_memset(char *s, char b, unsigned int n)
 	{
 		s[i] = b;
 	}
+	return (s);
 }
