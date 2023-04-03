@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include "main.h"
 
 /**
  * _memset - seting a number of bytes to a constant byte
