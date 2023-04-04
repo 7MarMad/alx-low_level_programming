@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<string.h>
 
 /**
  * _strspn - calculating the maching characters
@@ -11,8 +10,19 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int len = 0;
+	unsigned int len = 0, i, j;
 
-	len = strspn(s, accept);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		for (j = 0; accept[j] != '\0'; j++)
+		{
+			if (accept[j] == s[i])
+			{
+				len++;
+			}
+		}
+		if (len == 0)
+			break;
+	}
 	return (len);
 }
