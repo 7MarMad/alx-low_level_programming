@@ -4,8 +4,7 @@
  * _sqrt_recursion2 - finding the natural square root of a number
  * @n: the number we are working on
  * @i: the guess result
- * Return: -1 as fail or the result
- *
+ * Return: result or -1 as fail
  */
 int _sqrt_recursion2(int n, int i)
 {
