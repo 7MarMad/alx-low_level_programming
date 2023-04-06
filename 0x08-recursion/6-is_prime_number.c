@@ -10,9 +10,12 @@
  */
 int _prime_number(int n, int i, int k)
 {
-	if ((n / i) % 1 == 0)
+	int j;
+
+	j = n / i;
+	if (j * i == n)
 		return (0);
-	else if (i == k)
+	else if (i >= k)
 		return (1);
 	else
 		return (_prime_number(n, i + 2, k));
