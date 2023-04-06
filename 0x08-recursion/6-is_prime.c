@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 /**
  * _prime_number - finding if a number is prime or not
@@ -27,12 +28,12 @@ int is_prime_number(int n)
 {
 	int k, i = 3;
 
-	k = n / 2;
+	k = sqrt(n);
 	if (n <= 1)
 		return (0);
 	else if ((n % 2 == 0) || (n == 3))
 		return (0);
-	else if (k * 2 == n)
+	else if (k * k == n)
 		return (0);
 	else
 		return (_prime_number(n, i, k + 1));
