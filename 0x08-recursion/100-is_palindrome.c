@@ -14,9 +14,7 @@ int _is_it(char *s, char *c)
 		if (s[0] != c[0])
 			return (0);
 		else
-		{
 			return (_is_it(s + 1, c - 1));
-		}
 	}
 	else
 		return (1);
