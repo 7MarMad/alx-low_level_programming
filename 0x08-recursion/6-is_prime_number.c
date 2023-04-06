@@ -28,13 +28,13 @@ int is_prime_number(int n)
 {
 	int k, i = 3;
 
+	k = sqrt(n);
 	if (n <= 1)
 		return (0);
 	else if ((n % 2 == 0) || (n == 3))
 		return (0);
-	else if (sqrt(n) % 1 == 0)
+	else if (k * k == n)
 		return (0);
-	k = sqrt(n) + 1;
 	else
-		return (_prime_number(n, i, k));
+		return (_prime_number(n, i, k + 1));
 }
