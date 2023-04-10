@@ -4,7 +4,7 @@
 #include<string.h>
 
 /**
- * main - sum of positive numbers 
+ * main - sum of positive numbers
  * @argc: arg
  * @argv: arg array
  * Return: 0 or 1

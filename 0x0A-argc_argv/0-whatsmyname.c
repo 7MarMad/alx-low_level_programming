@@ -9,6 +9,6 @@
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	printf("%s", *argv);
+	printf("%s\n", *argv);
 	exit(EXIT_SUCCESS);
 }
