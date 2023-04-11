@@ -12,7 +12,9 @@ char *create_array(unsigned int size, char c)
 
 	ar = malloc(size * sizeof(char));
 	if (ar == NULL || size == 0)
+	{
 		return (NULL);
+	}
 	else
 	{
 		memset(ar, c, size);
