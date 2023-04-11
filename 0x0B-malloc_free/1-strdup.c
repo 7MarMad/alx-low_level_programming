@@ -13,6 +13,8 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 	len = strlen(str);
-	ar = malloc(len);
+	ar = malloc(len + 1);
+	if (ar == NULL)
+		return (NULL);
 	return (memcpy(ar, str, len));
 }

@@ -17,4 +17,5 @@ char *create_array(unsigned int size, char c)
 	{
 		memset(ar, c, size);
 		return (ar);
+	}
 }
