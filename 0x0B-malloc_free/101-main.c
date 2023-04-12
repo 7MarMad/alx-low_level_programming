@@ -33,6 +33,7 @@ int main(void)
         printf("Failed\n");
         return (1);
     }
+    printf("in the print");
     print_tab(tab);
     return (0);
 }

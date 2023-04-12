@@ -15,23 +15,35 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	len_str = strlen(str);
+	printf("%d\n", len_str);
 	while (i < len_str)
 	{
 		if ((i != 0 && str[i] == ' ' && str[i - 1] != ' ') || str[i] == '\0')
 			num_wr++;
+		if (i != 0 && str[i] == '\0' && str[i - 1] == ' ')
+			num_wr--;
 		i++;
 	}
-	arr2d = malloc(num_wr * sizeof(char *) + 1);
+	if (num_wr == 0)
+		return (NULL);
+	arr2d = (char **)malloc(num_wr * sizeof(char *) + 1);
 	if (arr2d == NULL)
 		return (NULL);
 	for (i = 0; i < num_wr; i++)
 	{
 		lensttr = 0;
 		mm = k;
-		while (str[k] != ' ' || str[k] != '\0')
+		while (lensttr == 0)
 		{
-			lensttr++;
-			k++;
+			if (str[k] == ' ')
+			{
+				k++;
+				mm++;
+			while (str[k] != ' ' && str[k] != '\0')
+			{
+				lensttr++;
+				k++;
+			}
 		}
 		arr2d[i] = malloc(lensttr * sizeof(char) + 1);
 		if (arr2d[i] == NULL)
