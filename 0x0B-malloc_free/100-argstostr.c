@@ -13,14 +13,18 @@ char *argstostr(int ac, char **av)
 	int len = 0, i, cur_len, prev_len = 0;
 
 	if (ac == 0 || av == NULL)
+	{
 		return (NULL);
+	}
 	else
 	{
 		while (ac > 0)
 		{
 			len = len + strlen(av[--ac]);
 		}
-		s = malloc(((len + 1) * sizeof(char)) + 1);
+		s = malloc(((len + ac) * sizeof(char)) + 1);
+		if (s == NULL)
+			return (NULL);
 		for (i = 0; i < ac; i++)
 		{
 			cur_len = strlen(av[i]);
