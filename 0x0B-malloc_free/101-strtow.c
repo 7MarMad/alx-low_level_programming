@@ -39,6 +39,7 @@ char **strtow(char *str)
 			{
 				k++;
 				mm++;
+			}
 			while (str[k] != ' ' && str[k] != '\0')
 			{
 				lensttr++;
