@@ -1,6 +1,27 @@
 #include<stdlib.h>
 #include<string.h>
 /**
+ * word_count - counting the word inside the string
+ * @str: the string we are counting in
+ * @len_str: length of the string
+ * Return: the result of the count
+ */
+int word_count(char *str, int len_str)
+{
+	int num_wr = 0, i = 0;
+
+	while (i <= len_str)
+	{
+		if (i != 0 && str[i] == ' ' && str[i - 1] != ' ')
+			num_wr++;
+		if (i != 0 && str[i] == '\0' && str[i - 1] != ' ')
+			num_wr++;
+		i++;
+	}
+	return (num_wr);
+}
+
+/**
  * strtow - splitting a string
  * @str: string to split
  * Return: 2D array as each string has one word
@@ -13,14 +34,7 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	len_str = strlen(str);
-	while (i <= len_str)
-	{
-		if (i != 0 && str[i] == ' ' && str[i - 1] != ' ')
-			num_wr++;
-		if (i != 0 && str[i] == '\0' && str[i - 1] != ' ')
-			num_wr++;
-		i++;
-	}
+	num_wr = word_count(str, len_str);
 	if (num_wr == 0)
 		return (NULL);
 	arr2d = (char **)malloc(num_wr * sizeof(char *) + 1);
