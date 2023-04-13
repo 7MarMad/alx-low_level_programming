@@ -32,7 +32,7 @@ char **strtow(char *str)
 		while (lensttr == 0)
 		{
 			if (str[k] == ' ')
-				k++, m++;
+				k++, mm++;
 			while (str[k] != ' ' && str[k] != '\0')
 			{
 				lensttr++, k++;
