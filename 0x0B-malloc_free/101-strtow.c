@@ -46,5 +46,6 @@ char **strtow(char *str)
 			arr2d[i][j] = str[j + mm];
 		}
 	}
+	arr2d[num_wr] = NULL;
 	return (arr2d);
 }
