@@ -22,12 +22,12 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	if (ptr == NULL)
 	{
-		arr = malloc(new_size * sizeof(*arr));
+		arr = malloc(new_size * sizeof(void*));
 		if (arr == NULL)
 			return (NULL);
 		return (arr);
 	}
-	arr = malloc(new_size * sizeof(*arr));
+	arr = malloc(new_size * sizeof(void *));
 	if (arr == NULL)
 		return (NULL);
 	if (old_size < new_size)
