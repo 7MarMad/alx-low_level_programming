@@ -17,7 +17,7 @@ char **strtow(char *str)
 	{
 		if (i != 0 && str[i] == ' ' && str[i - 1] != ' ')
 			num_wr++;
-		if (str[i] == '\0' && str[i] != ' ')
+		if (i != 0 && str[i] == '\0' && str[i - 1] != ' ')
 			num_wr++;
 		i++;
 	}
