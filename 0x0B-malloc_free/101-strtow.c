@@ -1,7 +1,5 @@
-#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
 /**
  * strtow - splitting a string
  * @str: string to split
@@ -15,13 +13,12 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	len_str = strlen(str);
-	printf("%d\n", len_str);
-	while (i < len_str)
+	while (i <= len_str)
 	{
-		if ((i != 0 && str[i] == ' ' && str[i - 1] != ' ') || str[i] == '\0')
+		if (i != 0 && str[i] == ' ' && str[i - 1] != ' ')
 			num_wr++;
-		if (i != 0 && str[i] == '\0' && str[i - 1] == ' ')
-			num_wr--;
+		if (str[i] == '\0' && str[i] != ' ')
+			num_wr++;
 		i++;
 	}
 	if (num_wr == 0)
@@ -31,19 +28,14 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; i < num_wr; i++)
 	{
-		lensttr = 0;
-		mm = k;
+		lensttr = 0, mm = k;
 		while (lensttr == 0)
 		{
 			if (str[k] == ' ')
-			{
-				k++;
-				mm++;
-			}
+				k++, m++;
 			while (str[k] != ' ' && str[k] != '\0')
 			{
-				lensttr++;
-				k++;
+				lensttr++, k++;
 			}
 		}
 		arr2d[i] = malloc(lensttr * sizeof(char) + 1);
@@ -52,10 +44,6 @@ char **strtow(char *str)
 		for (j = 0; j < lensttr; j++)
 		{
 			arr2d[i][j] = str[j + mm];
-		}
-		if (k != 0 && str[k] == ' ' && str[k - 1] == ' ' && str[k] != '\0')
-		{
-			k++;
 		}
 	}
 	return (arr2d);
