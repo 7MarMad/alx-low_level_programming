@@ -20,7 +20,7 @@ void error(void)
  * recur_print - using recursion to print with putchar
  * @res: num to print
  */
-void recur_print(long double res)
+void recur_print(long int res)
 {
 	if (res > 9)
 		recur_print(res / 10);
@@ -35,7 +35,7 @@ void recur_print(long double res)
 int main(int argc, char **argv)
 {
 	int i, num1, num2, len_num1, len_num2;
-	long double res;
+	long int res;
 
 	if (argc != 3)
 		error();
