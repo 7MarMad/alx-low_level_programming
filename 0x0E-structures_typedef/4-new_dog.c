@@ -1,4 +1,5 @@
 #include "dog.h"
+#include<stdlib.h>
 
 /**
  * new_dog - creting a new instance of a structre
@@ -9,11 +10,14 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t new;
+	dog_t nn;
+	dog_t *new;
+
+	new = &nn;
 	if (name == NULL || owner == NULL)
 		return (NULL);
-	new.name = name;
-	new.age = age;
-	new owner = owner;
-	return (&new);
+	new->name = name;
+	new->age = age;
+	new->owner = owner;
+	return (new);
 }
