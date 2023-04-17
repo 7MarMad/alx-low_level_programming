@@ -1,4 +1,4 @@
-
+#include "dog.h"
 /**
  * init_dog - initialize a var in dog structre
  * @d: structre

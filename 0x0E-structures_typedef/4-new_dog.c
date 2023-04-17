@@ -1,3 +1,4 @@
+#include "dog.h"
 
 /**
  * new_dog - creting a new instance of a structre

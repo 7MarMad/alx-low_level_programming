@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include "dog.h"
 
 /**
  * print_dog - print the data inside the structre
