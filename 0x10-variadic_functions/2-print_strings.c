@@ -9,11 +9,11 @@
  */
 void print_strings(const char *seperator, const unsigned int n, ...)
 {
-	unsigned int j;
+	unsigned int j, k = 0;
 	va_list list1, list2;
 
 	if (seperator == NULL)
-		return;
+		k = 1;
 	va_start(list1, n);
 	va_start(list2, n);
 	for (j = 0; j < n; j++)
@@ -25,7 +25,7 @@ void print_strings(const char *seperator, const unsigned int n, ...)
 		}
 		else
 			printf("%s", va_arg(list2, char *));
-		if (j != n-1)
+		if (j != n - 1 && k == 0)
 			printf("%s", seperator);
 	}
 	printf("\n");
