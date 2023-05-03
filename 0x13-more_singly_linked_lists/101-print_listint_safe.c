@@ -15,7 +15,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *walker, *rep;
 
 	if (head == NULL)
-		exit(98);
+		return (n);
 	walker = head;
 	while (walker != NULL)
 	{
