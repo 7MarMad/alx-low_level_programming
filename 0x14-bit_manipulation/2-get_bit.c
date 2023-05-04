@@ -1,4 +1,4 @@
-
+#include <stdlib.h>
 
 /**
  * get_bit - getting the bit at an specific index
@@ -11,7 +11,6 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	
 	while (n > 0 && index > 0)
 	{
 		n >>= 1;
