@@ -26,7 +26,7 @@ unsigned int binary_to_uint(const char *b)
 	while (num > 0)
 	{
 		res += (num % 10) * power;
-		num <<= 1;
+		num >>= 1;
 		power *= 2;
 	}
 	return (res);
