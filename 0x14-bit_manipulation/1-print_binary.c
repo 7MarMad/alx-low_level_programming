@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "main.h"
 
 /**
  * print_binary - printing an integer as a binary
@@ -11,7 +12,7 @@ void print_binary(unsigned long int n)
 
 	m = n;
 	if (m == 0)
-		printf("0");
+		_putchar('0');
 	while (m > 0)
 	{
 		m >>= 1;
@@ -21,8 +22,8 @@ void print_binary(unsigned long int n)
 	{
 		j--;
 		if ((n >> j) & 1)
-			printf("1");
+			_putchar('1');
 		else
-			printf("0");
+			_putchar('0');
 	}
 }
