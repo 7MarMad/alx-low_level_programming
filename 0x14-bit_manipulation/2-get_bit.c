@@ -21,7 +21,6 @@ int get_bit(unsigned long int n, unsigned int index)
 		n >>= 1;
 		idx--;
 	}
-	if (idx > 0)
-		return (-1);
+	
 	return (n & 1);
 }

@@ -12,7 +12,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int res = 0, num, i = 0, power = 1;
+	unsigned int res = 0, i = 0, num, power = 1;
 
 	if (b == NULL)
 		return (0);
@@ -25,7 +25,8 @@ unsigned int binary_to_uint(const char *b)
 	num = atoi(b);
 	while (num > 0)
 	{
-		res += (num % 10) * power;
+		if (num & 1)
+			res += power;
 		num >>= 1;
 		power *= 2;
 	}
