@@ -2,6 +2,41 @@
 #include<stdarg.h>
 
 /**
+ * counting - counting the parameters of the string
+ * @p: the string
+ * Return: result
+ */
+int counting(const char *p)
+{
+	int s = 0;
+
+	while (*p != '\0')
+	{
+		switch (p[0])
+		{
+			case 'c':
+				s++;
+				p++;
+				continue;
+			case 'i':
+				s++;
+				p++;
+				continue;
+			case 'f':
+				s++;
+				p++;
+				continue;
+			case 's':
+				s++;
+				p++;
+				continue;
+		}
+		p++;
+	}
+	return (s);
+}
+
+/**
  * print_all - printing all arguments nomatter what are there types
  * @format: the string to get parameters from
  */
@@ -13,12 +48,7 @@ void print_all(const char * const format, ...)
 
 	pp = format;
 	p = format;
-	while (*pp != '\0')
-	{
-		if (pp[0] == 'c' || pp[0] == 'i' || pp[0] == 'f' || pp[0] == 's')
-			count++;
-		pp++;
-	}
+	count = counting(pp);
 	va_start(list, format);
 	while (*p != '\0')
 	{
