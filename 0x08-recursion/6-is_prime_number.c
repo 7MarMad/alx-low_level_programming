@@ -3,6 +3,9 @@
 
 /**
  * prime_number - finding if number is prime or not
+ * @n: number we are testing
+ * @i: possible devider
+ * @k: redusing the range
  *
  * Return: 1 for n being a prime, 0 for n being not a prime
  */
