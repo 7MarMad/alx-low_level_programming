@@ -19,6 +19,8 @@ char *str_concat(char *s1, char *s2)
 		len2 = strlen(s2);
 	len = len1 + len2;
 	str = malloc(len + 1);
+	if (str == NULL)
+		return (NULL);
 	if (len1 != 0)
 		memcpy(str, s1, len1);
 	if (len2 != 0)
