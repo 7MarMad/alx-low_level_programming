@@ -4,21 +4,20 @@
 /**
  * wrd_count - counting the words in the string
  * @str: string where we count
- * 
+ *
  * Return: number of words
  */
 int wrd_count(char *str)
 {
 	int count = 0, i = 0;
 
-	do
-	{
+	do {
 		if (i != 0 && str[i] == ' ' && str[i - 1] != ' ')
 			count++;
 		if (i != 0 && str[i] == '\0' && str[i - 1] != ' ')
 			count++;
 		i++;
-	}while (str[i - 1] != '\0');
+	} while (str[i - 1] != '\0');
 	return (count);
 }
 
@@ -36,6 +35,8 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	count = wrd_count(str);
+	if (count == 0)
+		return (NULL);
 	arr = malloc((count * sizeof(char *)) + 1);
 	if (arr == NULL)
 		return (NULL);
@@ -55,12 +56,12 @@ char **strtow(char *str)
 		{
 			while (i > 0)
 				free(arr[i - 1]);
-			free (arr);
+			free(arr);
 			return (NULL);
 		}
 		memcpy(arr[i], str + m, lenwrd);
 	}
-	arr[count] = malloc(sizeof(NULL));
+	arr[count] = malloc(sizeof(NULL) - 1);
 	arr[count] = NULL;
 	return (arr);
 }
