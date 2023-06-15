@@ -16,11 +16,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s1 != NULL)
 		len1 = strlen(s1);
-	else
-	{
-		if (s2 == NULL)
-			return (NULL);
-	}
 	if (s2 != NULL)
 		len2 = strlen(s2);
 	if (len2 > n)
