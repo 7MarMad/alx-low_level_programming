@@ -7,7 +7,7 @@
  * error - printintg error and exiting with status 98
  *
  */
-void error()
+void error(void)
 {
 	_putchar('E');
 	_putchar('r');
@@ -18,6 +18,12 @@ void error()
 	exit(98);
 }
 
+/**
+ * _isdigit - checking if the string is a pure number
+ * @str: string to check
+ *
+ * Return: 1 for being a number
+ */
 
 int _isdigit(char *str)
 {
@@ -32,6 +38,13 @@ int _isdigit(char *str)
 	return (1);
 }
 
+/**
+ * number_length - getting the length of the number
+ * @num: number to check
+ *
+ * Return: how long
+ */
+
 int number_length(int num)
 {
 	int count = 0;
@@ -44,6 +57,13 @@ int number_length(int num)
 	return (count);
 }
 
+/**
+ * put_in_arr - putting a number in array, each digit in an element
+ * @num: number to put in the array
+ * @len_num: length of the number
+ *
+ * Return: pointer to the array
+ */
 
 int *put_in_arr(int num, int len_num)
 {
@@ -60,16 +80,35 @@ int *put_in_arr(int num, int len_num)
 	return (arr);
 }
 
+/**
+ * print_array - printing the result that is in the array
+ * @arr: the array where we are printing from
+ * @len: length of the array
+ */
+
 void print_array(int *arr, int len)
 {
-	int i;
+	int i, l = 0;
 
 	for (i = 0; i < len; i++)
 	{
+		if (l == 1 || arr[i] != 0)
+		{
 			_putchar('0' + arr[i]);
+			l = 1;
+		}
 	}
 	_putchar('\n');
 }
+
+/**
+ * add - adding the number after the multiplications
+ * @arr: array containing the numbers to add
+ * @len1: length of the width
+ * @len2: lenght of the height
+ *
+ * Return: pointer the result in an array
+ */
 
 int *add(int **arr, int len1, int len2)
 {
@@ -93,6 +132,16 @@ int *add(int **arr, int len1, int len2)
 	/*len_num = number_length(carry);*/
 	return (ar);
 }
+
+/**
+ * result_mul - multiplication of the 2 numbers
+ * @arr1: array containing the 1 st number
+ * @arr2: array containing the 2 nd number
+ * @len1: length of the 1 st array
+ * @len2: length of the 2 nd array
+ *
+ * Return: pointer the final result
+ */
 
 int *result_mul(int *arr1, int *arr2, int len1, int len2)
 {
