@@ -65,7 +65,7 @@ int number_length(int num)
  * Return: pointer to the array
  */
 
-int *put_in_arr(int num, int len_num)
+int *put_in_arr(char *str, int len_num)
 {
 	int *arr, i;
 
@@ -74,8 +74,7 @@ int *put_in_arr(int num, int len_num)
 		return (NULL);
 	for (i = 0; i < len_num; i++)
 	{
-		arr[len_num - i - 1] = num % 10;
-		num /= 10;
+		arr[len_num - i - 1] = str[len_num - i - 1] - '0';
 	}
 	return (arr);
 }
@@ -92,7 +91,7 @@ void print_array(int *arr, int len)
 
 	for (i = 0; i < len; i++)
 	{
-		if (l == 1 || arr[i] != 0)
+		if (l == 1 || arr[i] != 0 || i == len - 1)
 		{
 			_putchar('0' + arr[i]);
 			l = 1;
@@ -127,7 +126,7 @@ int *add(int **arr, int len1, int len2)
 			res += arr[j][i];
 		}
 		ar[(len1 + len2) - i - 1] = (res + carry) % 10;
-		carry = (res + carry) - ((res + carry) % 10);
+		carry = ((res + carry) - ((res + carry) % 10)) / 10;
 	}
 	/*len_num = number_length(carry);*/
 	return (ar);
@@ -182,24 +181,17 @@ int *result_mul(int *arr1, int *arr2, int len1, int len2)
  */
 int main(int argc, char **argv)
 {
-	int *arr1, *arr2, *arr, num1, num2, len_num1, len_num2;
+	int *arr1, *arr2, *arr, len_num1, len_num2;
 
 	if (argc != 3)
 		error();
 	_isdigit(argv[1]);
 	_isdigit(argv[2]);
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
-	if (num1 == 0 || num2 == 0)
-	{
-		_putchar('0');
-		_putchar('\n');
-		return (0);
-	}
-	len_num1 = number_length(num1);
-	len_num2 = number_length(num2);
-	arr1 = put_in_arr(num1, len_num1);
-	arr2 = put_in_arr(num2, len_num2);
+	
+	len_num1 = strlen(argv[1]);
+	len_num2 = strlen(argv[2]);
+	arr1 = put_in_arr(argv[1], len_num1);
+	arr2 = put_in_arr(argv[2], len_num2);
 	arr = result_mul(arr1, arr2, len_num1, len_num2);
 	print_array(arr, len_num1 + len_num2);
 	return (0);
