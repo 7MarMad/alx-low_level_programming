@@ -30,7 +30,7 @@ int _isdigit(char *str)
 	int i = 0, len;
 
 	len = strlen(str);
-	if (str[0] == '-' || str[0] == '+')
+	if (str[0] == '-')
 		i++;
 	for (; i < len; i++)
 	{
@@ -64,7 +64,7 @@ int number_length(int num)
 
 /**
  * put_in_arr - putting a number in array, each digit in an element
- * @num: number to put in the array
+ * @str: number to put in the array
  * @len_num: length of the number
  *
  * Return: pointer to the array
@@ -88,6 +88,8 @@ int *put_in_arr(char *str, int len_num)
  * print_array - printing the result that is in the array
  * @arr: the array where we are printing from
  * @len: length of the array
+ * @sign: sign of the result - or +
+ *
  */
 
 void print_array(int *arr, int len, int sign)
@@ -105,6 +107,21 @@ void print_array(int *arr, int len, int sign)
 		}
 	}
 	_putchar('\n');
+}
+
+/**
+ * _free - freeing the alllocated memory
+ * @arr: 2D array
+ */
+void _free(int **arr, int len)
+{
+	int i;
+
+	for (i = 0; i < len; i++)
+	{
+		free(arr[len - i - 1]);
+	}
+	free(arr);
 }
 
 /**
@@ -177,8 +194,12 @@ int *result_mul(int *arr1, int *arr2, int len1, int len2)
 		}
 	}
 	ar = add(arr, len1, len2);
+	free(arr1);
+	free(arr2);
+	_free(arr, len1 + len2);
 	return (ar);
 }
+
 /**
  * main - multiplication of 2 numbers using arrays
  * @argc: number of arguments passed
@@ -204,5 +225,6 @@ int main(int argc, char **argv)
 	arr2 = put_in_arr(argv[2], len_num2);
 	arr = result_mul(arr1, arr2, len_num1, len_num2);
 	print_array(arr, len_num1 + len_num2, sign1);
+	free(arr);
 	return (0);
 }
