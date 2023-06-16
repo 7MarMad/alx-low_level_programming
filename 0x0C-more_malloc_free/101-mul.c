@@ -27,15 +27,20 @@ void error(void)
 
 int _isdigit(char *str)
 {
-	int i, len;
+	int i = 0, len;
 
 	len = strlen(str);
-	for (i = 0; i < len; i++)
+	if (str[0] == '-' || str[0] == '+')
+		i++;
+	for (; i < len; i++)
 	{
 		if (!(isdigit(str[i])))
 			error();
 	}
-	return (1);
+	if (str[0] == '-')
+		return (1);
+	else
+		return (0);
 }
 
 /**
@@ -74,7 +79,7 @@ int *put_in_arr(char *str, int len_num)
 		return (NULL);
 	for (i = 0; i < len_num; i++)
 	{
-		arr[len_num - i - 1] = str[len_num - i - 1] - '0';
+		arr[len_num - i - 1] = str[strlen(str) - i - 1] - '0';
 	}
 	return (arr);
 }
@@ -85,10 +90,12 @@ int *put_in_arr(char *str, int len_num)
  * @len: length of the array
  */
 
-void print_array(int *arr, int len)
+void print_array(int *arr, int len, int sign)
 {
 	int i, l = 0;
 
+	if (sign == 1)
+		_putchar('-');
 	for (i = 0; i < len; i++)
 	{
 		if (l == 1 || arr[i] != 0 || i == len - 1)
@@ -181,18 +188,21 @@ int *result_mul(int *arr1, int *arr2, int len1, int len2)
  */
 int main(int argc, char **argv)
 {
-	int *arr1, *arr2, *arr, len_num1, len_num2;
+	int *arr1, *arr2, *arr, len_num1, len_num2, sign1, sign2;
 
 	if (argc != 3)
 		error();
-	_isdigit(argv[1]);
-	_isdigit(argv[2]);
-	
-	len_num1 = strlen(argv[1]);
-	len_num2 = strlen(argv[2]);
+	sign1 = _isdigit(argv[1]);
+	sign2 = _isdigit(argv[2]);
+	len_num1 = strlen(argv[1]) - sign1;
+	len_num2 = strlen(argv[2]) - sign2;
+	if (sign1 != sign2)
+		sign1 = 1;
+	else
+		sign1 = 0;
 	arr1 = put_in_arr(argv[1], len_num1);
 	arr2 = put_in_arr(argv[2], len_num2);
 	arr = result_mul(arr1, arr2, len_num1, len_num2);
-	print_array(arr, len_num1 + len_num2);
+	print_array(arr, len_num1 + len_num2, sign1);
 	return (0);
 }
