@@ -112,6 +112,7 @@ void print_array(int *arr, int len, int sign)
 /**
  * _free - freeing the alllocated memory
  * @arr: 2D array
+ * @len: width or height of the 2D array
  */
 void _free(int **arr, int len)
 {
