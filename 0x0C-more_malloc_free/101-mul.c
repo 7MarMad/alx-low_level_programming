@@ -122,7 +122,7 @@ void _free(int **arr, int len)
 	{
 		free(arr[len - i - 1]);
 	}
-	free(arr);
+	/*free(arr);*/
 }
 
 /**
