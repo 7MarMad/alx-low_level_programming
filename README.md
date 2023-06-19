@@ -1,1 +1,1 @@
-c program and coding in c
+Multiple Foundation Concepts for C programming launguage
