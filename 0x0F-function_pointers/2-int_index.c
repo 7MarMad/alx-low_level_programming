@@ -13,7 +13,7 @@ int int_index(int *array, size_t size, int (*cmp)(int))
 {
 	unsigned long int i;
 
-	if (size <= 0 || array == NULL)
+	if (size <= 0 || array == NULL || cmp == NULL)
 		return (-1);
 	for (i = 0; i < size; i++)
 	{
