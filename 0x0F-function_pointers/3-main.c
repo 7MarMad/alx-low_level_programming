@@ -25,8 +25,11 @@ int main(int argc, char **argv)
 	}
 	dd = argv[2];
 	func = get_op_func(dd);
-/*	if (dd != '+' && dd != '-' && dd != '*' && dd != '/' && dd != '%' &&
-	dd != '\'+\'' && dd != '\'-\'' && dd != '\'*\'' && dd != '\'/\'' && dd != '\'%\'')*/
+/*
+ * if (dd != '+' && dd != '-' && dd != '*' && dd != '/' && dd != '%' &&
+	dd != '\'+\'' && dd != '\'-\'' && dd != '\'*\'' && dd != '\'/\''
+	&& dd != '\'%\'')
+	*/
 	if (func == NULL)
 	{
 		printf("Error\n");
@@ -34,7 +37,8 @@ int main(int argc, char **argv)
 	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-	if ((dd[0] == '/' || dd[0] == '%' || dd[1] == '/' || dd[1] == '%') && num2 == 0)
+	if ((dd[0] == '/' || dd[0] == '%' || dd[1] == '/' || dd[1] == '%')
+	&& num2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
