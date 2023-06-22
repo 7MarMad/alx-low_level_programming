@@ -38,6 +38,9 @@ void print_all(const char * const format, ...)
 					ss = "(nil)";
 				printf("%s%s", com, ss);
 				break;
+			default:
+				i++;
+				continue;
 		}
 		com = ", ";
 		i++;
