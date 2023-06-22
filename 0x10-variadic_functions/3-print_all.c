@@ -8,10 +8,13 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	const char * const s = format;
+	const char *s;
 	char *ss, *com = ""; /*sl[] = {'c', 'i', 'f', 's'};*/
 	int i = 0;
 
+	if (format == NULL)
+		return;
+	s = format;
 	va_start(args, format);
 	while (s[i] != '\0')
 	{
