@@ -9,7 +9,7 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	const char *s;
-	char *ss, *com = ""; /*sl[] = {'c', 'i', 'f', 's'};*/
+	char *ss, *com = "";
 	int i = 0;
 
 	if (format == NULL)
@@ -21,7 +21,6 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 	while (s[i] != '\0')
 	{
-/*		j = 0;*/
 		switch (s[i])
 		{
 			case 'c':
@@ -36,22 +35,13 @@ void print_all(const char * const format, ...)
 			case 's':
 				ss = va_arg(args, char *);
 				if (ss == NULL)
-					ss = "(nil)";				
+					ss = "(nil)";
 				printf("%s%s", com, ss);
 				break;
-			default:
-				i++;
-				continue;
 		}
-/*		while (j < 4)
-		{
-			if (s[i + 1] == sl[j])
-			{
-				printf(", "), j = 4;
-			} j++;
-		}*/
 		com = ", ";
 		i++;
 	}
-	printf("\n"), va_end(args);
+	printf("\n");
+	va_end(args);
 }
