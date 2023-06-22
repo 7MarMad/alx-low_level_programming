@@ -30,19 +30,19 @@ void print_all(const char * const format, ...)
 			case 's':
 				ss = va_arg(args, char *);
 				if (ss == NULL)
+				{
 					printf("(nil)");
-				else
-					printf("%s", ss);
+					break;
+				}
+				printf("%s", ss);
 				break;
 		}
 		while (j < 4)
 		{
 			if (s[i + 1] == sl[j])
 			{
-				printf(", ");
-				j = 4;
-			}
-			j++;
+				printf(", "), j = 4;
+			} j++;
 		}
 		i++;
 	}
