@@ -9,41 +9,42 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	const char * const s = format;
-	char *ss, sl[] = {'c', 'i', 'f', 's'};
-	int j, i = 0;
+	char *ss, *com = ""; /*sl[] = {'c', 'i', 'f', 's'};*/
+	int i = 0;
 
 	va_start(args, format);
 	while (s[i] != '\0')
 	{
-		j = 0;
+/*		j = 0;*/
 		switch (s[i])
 		{
 			case 'c':
-				printf("%c", va_arg(args, int));
+				printf("%s%c", com, va_arg(args, int));
 				break;
 			case 'i':
-				printf("%d", va_arg(args, int));
+				printf("%s%d", com, va_arg(args, int));
 				break;
 			case 'f':
-				printf("%f", va_arg(args, double));
+				printf("%s%f", com, va_arg(args, double));
 				break;
 			case 's':
 				ss = va_arg(args, char *);
 				if (ss == NULL)
 					ss = "(nil)";				
-				printf("%s", ss);
+				printf("%s%s", com, ss);
 				break;
 			default:
 				i++;
 				continue;
 		}
-		while (j < 4)
+/*		while (j < 4)
 		{
 			if (s[i + 1] == sl[j])
 			{
 				printf(", "), j = 4;
 			} j++;
-		}
+		}*/
+		com = ", ";
 		i++;
 	}
 	printf("\n"), va_end(args);
