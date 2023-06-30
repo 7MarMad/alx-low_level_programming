@@ -10,16 +10,16 @@
  */
 int str_len(const char *str)
 {
-        int len = 0;
+	int len = 0;
 
-        if (str == NULL)
-                return (-1);
-        while (str[0] != '\0')
-        {
-                len++;
-                str++;
-        }
-        return (len);
+	if (str == NULL)
+		return (-1);
+	while (str[0] != '\0')
+	{
+		len++;
+		str++;
+	}
+	return (len);
 }
 
 /**
