@@ -11,7 +11,9 @@ void free_listint2(listint_t **head)
 {
 	listint_t *walker;
 
-	while(*head != NULL)
+	if (head == NULL)
+		return;
+	while (*head != NULL)
 	{
 		walker = (*head)->next;
 		free(*head);
