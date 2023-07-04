@@ -17,7 +17,7 @@ size_t free_listint_safe(listint_t **h)
 	walker = *h;
 	while (walker != NULL)
 	{
-		if ((walker->next) - walker > 0)
+		if ((walker->next) - walker < 0)
 		{
 			temp = walker->next;
 			free(walker);
