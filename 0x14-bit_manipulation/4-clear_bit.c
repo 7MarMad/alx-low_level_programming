@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
 /**
- * clear_bit making a bit as 0 in a number at a specific index
+ * clear_bit - making a bit as 0 in a number at a specific index
  * @n: number to work on
  * @index: index of bit that should change to 0
  *

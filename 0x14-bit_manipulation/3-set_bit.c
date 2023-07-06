@@ -19,7 +19,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 		power *= 2;
 		index--;
 	}
-	if ((n >> idx) ^ 1)
+	if ((*n >> ind) ^ 1)
 		*n += power;
 	return (1);
 }
