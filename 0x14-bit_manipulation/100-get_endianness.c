@@ -3,7 +3,7 @@
 /**
  * get_endianness - getting if the machine is using memory with
  * little endia,,ess or big endianess
- * 
+ *
  * Return: 0 for big endian, 1 for little endian
  */
 int get_endianness(void)
