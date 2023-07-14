@@ -76,7 +76,7 @@ int main(int argc, char **argv)
 			free(arr);
 			error98(argv[1]);
 		}
-		wr = write(op2, arr, 1024);
+		wr = write(op2, arr, re);
 		if (wr == -1 || op2 == -1)
 		{
 			free(arr);
