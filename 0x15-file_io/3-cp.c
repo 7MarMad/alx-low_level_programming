@@ -15,6 +15,7 @@ void error(void)
 
 /**
  * error99 - special errors
+ * @file_to: arg name of file
  *
  */
 void error99(char *file_to)
@@ -25,6 +26,7 @@ void error99(char *file_to)
 
 /**
  * error98 - error for not being able to open or read the 1st file
+ * @file_from: arg for file name
  *
  */
 void error98(char *file_from)
@@ -34,7 +36,7 @@ void error98(char *file_from)
 }
 
 /**
- * create-arr - creating an array for puting the text after reding from file
+ * create_arr - creating an array for puting the text after reding from file
  * @str: str to work on
  *
  * Return: string
@@ -68,7 +70,6 @@ int main(int argc, char **argv)
 	op1 = open(argv[1], O_RDONLY);
 	op2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	re = read(op1, arr, 1024);
-
 	do {
 		if (re == -1 || op1 == -1)
 		{
