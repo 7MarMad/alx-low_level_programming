@@ -9,7 +9,7 @@
  */
 void error(void)
 {
-	dprintf(STDERR_FILENO, "cp file_from file_to\n");
+	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	exit(97);
 }
 
