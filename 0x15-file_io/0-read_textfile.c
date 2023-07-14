@@ -11,7 +11,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int n, readd, fd, let;
+	int n, fd, let;
 	char *string;
 
 	if (filename == NULL)
@@ -22,7 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	string = malloc(letters + 1);
 
-	readd = read(fd, string, letters);
+	read(fd, string, letters);
 /*
  *	if (readd < let && readd != 0)
  *	{
