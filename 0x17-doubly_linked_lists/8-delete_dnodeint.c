@@ -14,21 +14,19 @@ int delete_h(dlistint_t **head)
 	walker = *head;
 	if (*head == NULL)
 		return (-1);
+
+	if ((*head)->next == NULL)
+	{
+		free(*head);
+		*head = NULL;
+		return (1);
+	}
 	else
 	{
-		if ((*head)->next == NULL)
-		{
-			free(*head);
-			*head = NULL;
-			return (1);
-		}
-		else
-		{
-			walker->next->prev = NULL;
-			*head = walker->next;
-			free(walker);
-			return (1);
-		}
+		walker->next->prev = NULL;
+		*head = walker->next;
+		free(walker);
+		return (1);
 	}
 }
 
@@ -54,12 +52,10 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	}
 	if (walker == NULL)
 		return (-1);
-	else
-	{
-		walker->prev->next = walker->next;
-		if (walker->next != NULL)
-			walker->next->prev = walker->prev;
-		free(walker);
-		return (1);
-	}
+
+	walker->prev->next = walker->next;
+	if (walker->next != NULL)
+		walker->next->prev = walker->prev;
+	free(walker);
+	return (1);
 }
